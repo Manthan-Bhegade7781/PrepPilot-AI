@@ -1,0 +1,53 @@
+import axios from "axios"
+
+const api = axios.create({
+    baseURL: import.meta.env.VITE_API_URL,
+    withCredentials: true,
+}); 
+
+export const generateInterviewReport= async({jobDescription,selfDescription,resumeFile})=>{
+    const formData = new FormData()
+    formData.append("jobDescription",jobDescription)
+    formData.append("selfDescription",selfDescription)
+    formData.append("resume",resumeFile)
+
+    const response = await api.post("/api/interview/", formData,{
+        headers:{
+            "Content-Type":"multipart/form-data"
+        }
+    })
+
+    return response.data;
+}
+
+export const getInterviewReportById = async (interviewId)=>{
+    const response = await api.get(`/api/interview/report/${interviewId}`)
+
+    return response.data;
+}
+
+export const getAllInterviewReports = async()=>{
+    const response = await api.get("/api/interview/")
+
+    return response.data
+}
+
+export const searchReports = async(search)=>{
+
+    const response = await api.get(`/api/interview/search/${search}`);
+
+    return response.data;
+}
+
+export const generateResumePdf = async ({ interviewId }) => {
+    const response = await api.post(`/api/interview/resume/${interviewId}`, null, {
+        responseType: "blob"
+    })
+
+    return response.data
+}
+
+export const deleteInterviewReport = async (interviewId) => {
+    const response = await api.delete(`/api/interview/${interviewId}`);
+    return response.data;
+};
