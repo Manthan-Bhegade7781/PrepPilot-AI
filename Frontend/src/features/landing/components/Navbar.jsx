@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import { MenuIcon, XIcon } from '../Icons'
 
 const navLinks = [
-  { label: 'Home', href: '/dashboard' },
+  { label: 'Home', href: '/' },
   { label: 'Features', href: '#features' },
   { label: 'How It Works', href: '#how-it-works' },
   { label: 'About', href: '#about' },

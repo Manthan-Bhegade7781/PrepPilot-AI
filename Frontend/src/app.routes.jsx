@@ -38,7 +38,7 @@ export const router = createBrowserRouter([
         path:"/settings",
         element: <Protected><Settings /></Protected>
     },{
-        path:"/dashboard",
+        path:"/",
         element: <LandingPage />
     }
 ])
