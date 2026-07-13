@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react'
-import ResumeUploadCard from './ResumeUploadCard.jsx'
-import DescriptionCard from './DescriptionCard.jsx'
-import ReadinessPanel from './ReadinessPanel.jsx'
+import ResumeUploadCard from './Resumeuploadcard.jsx'
+import DescriptionCard from './Descriptioncard.jsx'
+import ReadinessPanel from './Readinesspanel.jsx'
 import { UserIcon, BriefcaseIcon, SparklesIcon, LoaderIcon } from '../Icons.jsx'
 
 const ACCEPT_EXT = [".pdf"]
