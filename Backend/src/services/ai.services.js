@@ -1,7 +1,8 @@
 const { GoogleGenAI } = require("@google/genai");
 const { z } = require("zod");
 const { zodToJsonSchema } = require("zod-to-json-schema");
-const puppeteer = require("puppeteer")
+const puppeteer = require("puppeteer-core");
+const chromium = require("@sparticuz/chromium");
 
 const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY,
@@ -195,13 +196,11 @@ Each day contains:
 
 
 async function pdfGenerate(htmlContent) {
-    const browser = await puppeteer.launch({
-      headless: true,
-      args: [
-        "--no-sandbox",
-        "--disable-setuid-sandbox",
-      ],
-    });
+   const browser = await puppeteer.launch({
+    executablePath: await chromium.executablePath(),
+    args: chromium.args,
+    headless: true,
+  });
     const page = await browser.newPage();
     await page.setContent(htmlContent, { waitUntil: "networkidle0" })
 
