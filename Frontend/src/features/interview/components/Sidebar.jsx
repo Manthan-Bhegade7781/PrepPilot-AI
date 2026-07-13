@@ -1,6 +1,6 @@
 import React from 'react'
-import { XIcon, LogoutIcon } from './icons.jsx'
-import { defaultNavItems } from '../data.js'
+import { XIcon, LogoutIcon } from './Icons.jsx'
+import { defaultNavItems } from '../Data.js'
 import { Link } from 'react-router'
 
 

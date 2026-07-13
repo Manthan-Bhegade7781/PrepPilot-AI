@@ -1,5 +1,5 @@
 import React from 'react'
-import QAItem from './QAItem.jsx'
+import QAItem from './Qaitem'
 
 /**
  * QAList

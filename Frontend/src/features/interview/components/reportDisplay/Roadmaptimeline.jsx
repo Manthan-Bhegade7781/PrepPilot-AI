@@ -1,5 +1,5 @@
 import React from 'react'
-import RoadmapDay from './RoadmapDay.jsx'
+import RoadmapDay from './Roadmapday'
 
 /**
  * RoadmapTimeline
