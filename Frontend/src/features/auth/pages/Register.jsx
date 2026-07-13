@@ -294,7 +294,8 @@ const Signup = () => {
               
               <div className="flex-1 border-t border-white/10"></div>
               </div>
-              
+
+            <div className="flex justify-center">  
               <GoogleLogin
                 onSuccess={async (credentialResponse) => {
                   try {
@@ -311,7 +312,7 @@ const Signup = () => {
                   size="large"
                   shape="pill"
                   text="continue_with"
-               />
+               /></div>
             </form>
           </div>
 
