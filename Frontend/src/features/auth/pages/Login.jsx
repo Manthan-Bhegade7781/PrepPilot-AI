@@ -206,8 +206,6 @@ const Login = () => {
                 try {
                   const user = await handleGoogleLogin(credentialResponse.credential);
 
-                  console.log(user);
-
                   if (user) {
                       navigate("/home");
                   }
