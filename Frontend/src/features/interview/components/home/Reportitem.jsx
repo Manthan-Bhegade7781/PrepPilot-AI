@@ -55,42 +55,42 @@ const ReportItem = ({ report, onView = () => {} }) => {
 
   return (
     <>
-    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 px-5 py-4">
+    <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 px-4 lg:px-5 py-4">
 
   {/* Left */}
   <div
     onClick={onView}
-    className="flex items-center gap-4 flex-1 cursor-pointer"
+    className="flex items-center gap-4 flex-1 min-w-0 cursor-pointer"
   >
     <span className="flex h-9 w-9 items-center justify-center rounded-md bg-teal-400/10 text-teal-400">
       <ReportIcon width={16} height={16} />
     </span>
 
     <div className="min-w-0">
-      <p className="truncate text-sm font-medium text-slate-100">
+      <p className="truncate text-xs sm:text-sm font-medium text-slate-100">
         {title}
       </p>
-      <p className="text-xs text-slate-500">{date}</p>
+      <p className="text-[11px] sm:text-xs text-slate-500">{date}</p>
     </div>
   </div>
 
   {/* Right */}
-  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
+ <div className="flex flex-col lg:flex-row items-stretch lg:items-center gap-2 lg:gap-3 w-full lg:w-auto">
 
-    <div className="flex items-center justify-between sm:justify-start gap-3">
+    <div className="flex flex-wrap items-center gap-2">
       <span className={`text-sm font-semibold ${scoreColor}`}>
         {matchscore}%
       </span>
 
-      <span className={`rounded-full px-3 py-1 text-xs ${statusStyle}`}>
+      <span className={`rounded-full px-2 lg:px-3 py-1 text-[11px] lg:text-xs ${statusStyle}`}>
         {status}
       </span>
     </div>
 
-    <div className="flex gap-2">
+    <div className="flex flex-wrap gap-2 w-full lg:w-auto">
       <button
         onClick={onView}
-        className="flex-1 sm:flex-none rounded-lg bg-teal-400 px-4 py-2 text-sm font-medium text-[#0B0D12] hover:bg-teal-300"
+        className="flex-1 lg:flex-none rounded-lg bg-teal-400 px-3 lg:px-4 py-2 text-sm font-medium text-[#0B0D12] hover:bg-teal-300"
       >
         View
       </button>
@@ -100,7 +100,7 @@ const ReportItem = ({ report, onView = () => {} }) => {
         setShowDeleteModal(true);
         setSelectedReport(report);
         }}
-        className="flex-1 sm:flex-none rounded-lg border border-red-500/30 bg-red-500/10 px-4 py-2 text-sm font-medium text-red-400 hover:bg-red-500/20"
+        className="flex-1 lg:flex-none rounded-lg border border-red-500/30 bg-red-500/10 px-3 lg:px-4 py-2 text-sm font-medium text-red-400 hover:bg-red-500/20"
       >
         Delete
       </button>
