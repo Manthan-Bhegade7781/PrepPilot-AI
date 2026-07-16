@@ -39,7 +39,7 @@ const Navbar = () => {
         </Link>
 
         {/* Center links — desktop */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => (
             <a
               key={link.label}
@@ -52,7 +52,7 @@ const Navbar = () => {
         </nav>
 
         {/* Right buttons — desktop */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
           <Link
             to="/login"
             className="rounded-lg border bg-white/[0.20] border-white/[0.12] px-4 py-2 text-sm font-medium text-slate-200 hover:bg-white/[0.05] transition-colors"
@@ -69,7 +69,7 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-slate-300"
+          className="lg:hidden text-slate-300"
           onClick={() => setMobileOpen((o) => !o)}
           aria-label="Toggle menu"
         >
@@ -79,7 +79,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden mt-3 mx-4 rounded-xl border border-white/[0.08] bg-[#12151C]/95 backdrop-blur-xl p-4 space-y-1">
+        <div className="lg:hidden mt-3 mx-4 rounded-xl border border-white/[0.08] bg-[#12151C]/95 backdrop-blur-xl p-4 space-y-1">
           {navLinks.map((link) => (
             <a
               key={link.label}
